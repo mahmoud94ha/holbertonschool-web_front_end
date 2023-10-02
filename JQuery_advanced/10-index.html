@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function addPostRow(data) {
+            var paragraph = $("<p></p>");
+            var span = $("<span></span>").text("Post created with id " + data.id + ", title: " + data.title + ", author: " + data.author);
+            paragraph.append(span);
+            $("body").append(paragraph);
+        }
+        
+        function listPosts() {
+            $.get("http://localhost:3000/posts", function(response) {
+                if (response.length > 0) {
+                    response.forEach(function(post) {
+                        addPostRow(post);
+                    });
+                } else {
+                    alert("No posts found");
+                }
+            }).fail(function() {
+                alert("Server Error");
+            });
+        }
+        
+        $(document).ready(function() {
+            listPosts();
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

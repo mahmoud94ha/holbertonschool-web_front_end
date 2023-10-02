@@ -1,0 +1,81 @@
+Access Web
+Get real time data from internet
+
+GPT 3.5
+
+GPT 3.5
+Charges 1x Query
+Fast and good at reasoning
+
+GPT 4
+Charges 10x Queries
+Slightly slow and best at reasoning
+
+Claude 2
+Charges 10x Queries
+Claude 2 by Anthropic
+
+Claude Instant
+Charges 5x Queries
+Claude Instant By Anthropic
+
+Llama-2
+Charges 1x Query
+The open source model by Meta
+
+GPT 3.5 16K
+Charges 2x Query
+Longer context model by OpenAI
+
+Code-LLaMa
+Charges 1x Query
+Open Source model by Meta, finetuned for coding tasks
+
+Hello, I am Merlin! How can I assist you today?
+
+In a file 9-index.html, reuse the code from the previous task In the header, add some CSS, with the style tag: Add a new class named loading Set the opacity at 0.2 within that class In your script with your other functions, create a function named displayLoading: It accepts one argument loading It select the first ul element of the page If loading is true, it wraps the element with a div tag and the class loading If loading is false, it unwrap the ul from the div Modify the queryWikipedia function: It should call the function displayLoading before querying the API Once the API returns the value, it should remove the opacity by calling the function again Requirements: You must use the wrap and unwrap functions of Jquery
+.
+Based on the provided information, here is the modified code:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+    <style>
+        .loading {
+            opacity: 0.2;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        function wrapLoading() {
+            $("ul:first").wrap(`<div class="loading"></div>`);
+        }
+
+        function unwrapLoading() {
+            $("ul:first").unwrap();
+        }
+
+        function queryWikipedia() {
+            displayLoading(true);
+            
+            
+            displayLoading(false);
+        }
+        
+        function displayLoading(loading) {
+            if (loading) {
+                wrapLoading();
+            } else {
+                unwrapLoading();
+            }
+        }
+
+        $(document).ready(function() {
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
